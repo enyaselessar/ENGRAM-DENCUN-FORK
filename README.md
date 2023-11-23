@@ -16,6 +16,8 @@ Token Name : tGRAM
 https://faucet-tokio.engram.tech/   buradan cüzdan adresimize 33 tgram token alalım
 
 
+
+
 ESKİ REPOYU SİLELİM
 
 
@@ -26,6 +28,8 @@ docker compose down -v
 cd
 
 rm -rf "/root/tokio-docker/"
+
+
 
 
 YENİ REPOYU YÜKLEYELİM
@@ -44,6 +48,8 @@ chmod +x ./scripts/*.sh
 mkdir -p execution consensus
 
 
+
+
 DEPOSIT DOSYASINI YAPILANDIRALIM
 
 nano ./scripts/validator-deposit-data.sh komutunu girip aşağıdaki kısımları değiştirelim
@@ -56,6 +62,8 @@ validators-mnemonic: Tekrar tırnak içine mnemonicler
 from: cüzdan adresimiz
 
 privatekey: cüzdan adresimizin private keyi
+
+
 
 
 VALIDATORUMUZU OLUSTURALIM
@@ -75,6 +83,8 @@ VALIDATORUMUZU OLUSTURALIM
 5.soru password oluşturalım
 
 6.soru password tekrar yazalım
+
+
 
 
 DOCKER DEGISKENLERINI AYARLAYIP, ÇALIŞTIRALIM
