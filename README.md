@@ -49,6 +49,13 @@ mkdir -p execution consensus
 
 
 
+CÜZDANIMIZDA BULUNAN TOKENLARI DESPOSIT EDELİM
+
+
+bash ./scripts/validator-deposit-data.sh
+
+
+
 
 DEPOSIT DOSYASINI YAPILANDIRALIM
 
