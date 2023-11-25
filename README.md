@@ -62,8 +62,8 @@ nano ./scripts/validator-deposit-data.sh
 amount: # tGRAM deposit miktarı.32000000000 olarak karşınıza çıkacaktır.
 smin: # Çıkan değeri değiştirmedim.
 smax: # Çıkan değeri değiştirmedim.
-withdrawals-mnemonic: # yukarda oluşturduğumuz mnemonicleri giriyoruz
-validators-mnemonic: # yukarda oluşturduğumuz mnemonicleri giriyoruz
+withdrawals-mnemonic: # yukarda oluşturduğumuz veya önceden elimizde olan mnemonicleri giriyoruz
+validators-mnemonic: # yukarda oluşturduğumuz veya önceden elimizde olan mnemonicleri giriyoruz
 from: # mnemonicleri import ettiğimiz ve token aldığımız cüzdan adresi
 privatekey: # mnemonicleri import ettiğimiz cüzdanın private keyi
 
