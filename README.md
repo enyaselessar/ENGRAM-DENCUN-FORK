@@ -4,6 +4,7 @@
 
 
 ```
+cd
 cd tokio-docker
 docker compose down -v
 cd
