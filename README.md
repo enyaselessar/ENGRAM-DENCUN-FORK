@@ -78,8 +78,8 @@ bash ./scripts/validator-deposit-data.sh
 <h1 align="center">Public Key Oluşturma</h1>
 
 ```console
-# On-chain deposit datasını düzenliyoruz.
-docker run -it --rm -v $(pwd)/validator_keys:/app/validator_keys engramnet/staking-deposit-cli:dencun existing-mnemonic --num_validators=1 --validator_start_index=0
+# Validatörümüzü oluşturalım
+./scripts/validator-build.sh
 ```
 
 ```console
