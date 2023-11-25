@@ -117,15 +117,14 @@ sudo nano docker-compose.yml
 
 # Aşağıdaki kısımları değiştirelim
 ethstats=YourNameNodeHere  << YourNameNodeHere kısmını node/community adı ile değiştirin.
-identity=Huemint << Discord nickinizi girin.
-graffiti=Huemint << Discord nickinizi girin
+identity=elessar << Discord nickinizi girin.
+graffiti=elessar << Discord nickinizi girin
 enr-address=0.0.0.0 << IPAddresinizi girin.
 suggested-fee-recipient=0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 << Kendi cüzdan adresimizi giriyoruz.
-graffiti=Huemint << Nickname girin.
+graffiti=elessar << Nickname girin.
 
 # Çalıştıralım
 docker compose up -d
-
 
 # Çalıştırdıktan sonra:
 [+] Running 4/4
@@ -136,6 +135,35 @@ docker compose up -d
  ⠿ Container lighthouse_cl                                 Started
  ⠿ Container lighthouse_vc                                 Started
 ```
+## Eğer ```docker logs -f lighthouse_vc``` komutu loglarınız aşağıdaki gibi ise ```password.txt``` dosyasını kontrol etmeniz gerekiyor.
+
+```bash
+Nov 23 16:34:30.001 INFO No validators present                   msg: see `lighthouse vm create --help` or the HTTP API documentation, service: notifier
+Nov 23 16:34:42.000 INFO Connected to beacon node(s)             synced: 1, available: 1, total: 1, service: notifier
+Nov 23 16:34:42.001 INFO No validators present                   msg: see `lighthouse vm create --help` or the HTTP API documentation, service: notifier
+@@ -170,12 +174,27 @@ Nov 23 16:35:06.000 INFO Connected to beacon node(s)             synced: 1, avai
+Nov 23 16:35:06.001 INFO No validators present                   msg: see `lighthouse vm create --help` or the HTTP API documentation, service: notifier
+Nov 23 16:35:18.001 INFO Connected to beacon node(s)             synced: 1, available: 1, total: 1, service: notifier
+Nov 23 16:35:18.001 INFO No validators present                   msg: see `lighthouse vm create --help` or the HTTP API documentation, service: notifier
+```
+### Dosyayı açtığınızda kurulumda oluşturduğunuz şifre yerine 0x.... şeklinde ise 0x.... i silip yerine şifrenizi girmeniz lazım.Bunu yapmanın 2 yolu var.
+```console
+
+# 1.Mobaxterm/Winscp ile direkt dosya üzerinden.
+cd tokio-docker
+docker compose down 
+# Node u durdurduktan sonra <tokio-docker/custom_config_data> dizinine girip password.txt dosyasında düzenlemeyi yapıp kayıt edin.
+docker compose up -d # ile node unuzu yeniden başlatın.
+
+# 2.Terminal üzerinden.
+cd tokio-docker
+docker compose down 
+cd tokio-docker/custom_config_data 
+sudo nano password.txt #Düzeltmeyi yaptıktan sonra Ctrl X+Y enter yapın.
+cd ..
+docker compose up -d
+```
+Nodeun onaylanması 30dk--2sa arasında olabilir.
 
 <h1 align="center">Log kontrolleri</h1>
 
